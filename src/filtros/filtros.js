@@ -1,11 +1,11 @@
 let operadores = {
-    "==": (attribute,value) => attribute == value,
-    "!=": (attribute,value) => attribute != value,
-    ">": (attribute,value) => attribute > value,
-    "<": (attribute,value) => attribute < value,
-    ">=": (attribute,value) => attribute >= value,
-    "<=": (attribute,value) => attribute <= value,
-    "includes":(attribute,value) => attribute.includes(value)
+    "==": (a,b) => a == b,
+    "!=": (a,b) => a != b,
+    ">": (a,b) => a > b,
+    "<": (a,b) => a < b,
+    ">=": (a,b) => a >= b,
+    "<=": (a,b) => a <= b,
+    "includes":(a,b) => a.includes(b)
 }
 
 let makeFiltro = (attribute, operator, value)=>{
