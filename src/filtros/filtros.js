@@ -5,7 +5,7 @@ let operadores = {
     "<": (a,b) => a < b,
     ">=": (a,b) => a >= b,
     "<=": (a,b) => a <= b,
-    "includes":(a,b) => a.includes(b)
+    "includes":(a,b) => Array.isArray(a) && a.includes(b)
 }
 
 let makeFiltro = (attribute, operator, value)=>{

@@ -1,7 +1,7 @@
 const express = require('express')
 
 let APP = express();
-let PORT = 3000 
+let PORT = process.env.PORT ?? 3000; 
 
 let { makeFiltro } = require("./filtros/filtros")
 let personajes = require("../data/personajes.json")
@@ -20,7 +20,9 @@ APP.post("/filtros",(req,res)=>{
 
 
 APP.listen(PORT,(e)=>{
-    if (!e) return console.log(`servidor corriendo -> ${PORT}`)
-
-    return console.warn("ocurrio en error al escuchar el puerto: ",PORT)
+    if (e) {
+        console.warn(e)
+        process.exit(1)
+    }
+    return console.log(`servidor corriendo -> ${PORT}`)
 })
