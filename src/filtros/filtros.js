@@ -9,6 +9,7 @@ let operadores = {
 }
 
 let makeFiltro = (attribute, operator, value)=>{
+    if(!operadores[operator]) throw new Error("operador no soportado")
     return (p) => operadores[operator](p[attribute],value)
 }
 
